@@ -13,6 +13,7 @@ public class Scheduler extends Action{
 	}
 	
 	public void addAction(Action action) {
+		this.isInitialized = true;
 		this.actions.add(action);
 	}
 	

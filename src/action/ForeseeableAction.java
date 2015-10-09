@@ -11,6 +11,7 @@ public class ForeseeableAction extends Action {
 	 */
 	public ForeseeableAction(int totalTime){
 		this.totalTime = totalTime;
+		this.remainingTime = totalTime;
 	}
 	
 	/**

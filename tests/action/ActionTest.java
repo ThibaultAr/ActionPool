@@ -25,4 +25,12 @@ public abstract class ActionTest {
 		assertFalse(action.isInProgress());
 		assertTrue(action.isFinished());
 	}
+	
+	@Test
+	public void testReadyProgress(){
+		Action action = this.createAction();
+		assertTrue(action.isReady());
+		action.doStep();
+		assertTrue(action.isInProgress());
+	}
 }
