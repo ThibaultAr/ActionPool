@@ -2,6 +2,7 @@ package action;
 
 public abstract class Action {
 
+
 	/**
 	 * Made the action pass to it next step
 	 */

@@ -1,6 +1,6 @@
 package action;
 
-public class ForeseeableAction {
+public class ForeseeableAction extends Action {
 
 	protected int totalTime;
 	protected int remainingTime;
