@@ -2,7 +2,7 @@ package action;
 
 public abstract class Action {
 
-	public abstract void dostep();
+	public abstract void doStep();
 	
 	public abstract boolean isReady();
 	
