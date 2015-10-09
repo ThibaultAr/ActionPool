@@ -19,6 +19,7 @@ public class Scheduler extends Action{
 	 * 				the action to be add to the actions list
 	 */
 	public void addAction(Action action) {
+		this.isInitialized = true;
 		this.actions.add(action);
 	}
 	
