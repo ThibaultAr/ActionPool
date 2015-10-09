@@ -1,5 +1,7 @@
 package pool.user;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class ResourcefulUserTest {
@@ -7,9 +9,9 @@ public class ResourcefulUserTest {
 	@Test
 	public void resetResourceTest() {
 		ResourcefulUser resourcefulUser= new ResourcefulUser(1);
-		AssertNotSame(resourcefulUser.getResource(), null);
+		assertNotSame(resourcefulUser.getResource(), null);
 		resourcefulUser.reset();
-		AssertSame(resourcefulUser.getResource(), null);
+		assertSame(resourcefulUser.getResource(), null);
 		
 	}
 }
