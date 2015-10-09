@@ -14,7 +14,7 @@ public class ForeseeableAction {
 	}
 	
 	/**
-	 * Tells if the action is ready
+	 * Tells if the action is ready or not
 	 * @return true if remainingTime and totalTime are the same, false if not
 	 */
 	public boolean isReady(){
@@ -22,7 +22,7 @@ public class ForeseeableAction {
 	}
 	
 	/**
-	 * Tells if the action is in progress
+	 * Tells if the action is in progress or not
 	 * @return true if the action is not ready nor finished, false if not
 	 */
 	public boolean isInProgress(){
@@ -30,8 +30,8 @@ public class ForeseeableAction {
 	}
 	
 	/**
-	 * Tells if the action is in finished
-	 * @return true if remainingTime is <= 0
+	 * Tells if the action is in finished or not
+	 * @return true if remainingTime is <= 0, false if not
 	 */
 	public boolean isFinished(){
 		return remainingTime <= 0;
