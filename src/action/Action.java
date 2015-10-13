@@ -6,7 +6,7 @@ public abstract class Action {
 	/**
 	 * Made the action pass to it next step
 	 */
-	public abstract void dostep();
+	public abstract void doStep();
 	
 	/**
 	 * Tells if the action is ready or not

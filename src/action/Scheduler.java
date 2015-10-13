@@ -3,7 +3,7 @@ package action;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Scheduler extends Action{
+public abstract class Scheduler extends Action{
 
 	protected List<Action> actions;
 	protected boolean isReady = true;
@@ -39,11 +39,5 @@ public class Scheduler extends Action{
 		return isInitialized && !this.isReady() && !this.isFinished();
 	}
 	
-	public void doStep(){
-		isReady = false;
-		Action nextAction = actions.get(0);
-		nextAction.doStep();
-		if(nextAction.isFinished())
-			actions.remove(0);
-	}
+	public abstract void doStep();
 }
