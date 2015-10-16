@@ -6,5 +6,7 @@ public class TakeResourceActionTest extends ActionTest{
 	public Action createAction() {
 		return;
 	}
+	
+	
 
 }
