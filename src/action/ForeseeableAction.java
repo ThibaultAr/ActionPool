@@ -1,5 +1,7 @@
 package action;
 
+import exception.ActionFinishedException;
+
 public class ForeseeableAction extends Action {
 
 	protected int totalTime;
@@ -41,7 +43,8 @@ public class ForeseeableAction extends Action {
 	/**
 	 * Decrement the action remaining time
 	 */
-	public void doStep(){
+	public void doStep() throws ActionFinishedException{
+		super.doStep();
 		remainingTime--;
 	}
 }

@@ -1,12 +1,17 @@
 package action;
 
+import exception.ActionFinishedException;
+
 public abstract class Action {
 
 
 	/**
 	 * Made the action pass to it next step
 	 */
-	public abstract void doStep();
+	public void doStep() throws ActionFinishedException {
+		if(this.isFinished())
+			throw new ActionFinishedException();
+	}
 	
 	/**
 	 * Tells if the action is ready or not

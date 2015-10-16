@@ -15,7 +15,7 @@ public class SequentialSchedulerTest extends SchedulerTest {
 	public Scheduler createScheduler() {
 		return (Scheduler)new SequentialScheduler();
 	}
-
+	
 	@Test
 	public void testSequentialScheduler(){
 		Action action1 = new ForeseeableAction(2);
@@ -29,19 +29,19 @@ public class SequentialSchedulerTest extends SchedulerTest {
 		assertTrue(action2.isReady());
 		assertTrue(scheduler.isReady());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isInProgress());
 		assertTrue(action2.isReady());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isFinished());
 		assertTrue(action2.isReady());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isFinished());
 		assertTrue(action2.isFinished());

@@ -39,5 +39,4 @@ public abstract class Scheduler extends Action{
 		return isInitialized && !this.isReady() && !this.isFinished();
 	}
 	
-	public abstract void doStep();
 }

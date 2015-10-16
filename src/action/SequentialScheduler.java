@@ -1,8 +1,11 @@
 package action;
 
+import exception.ActionFinishedException;
+
 public class SequentialScheduler extends Scheduler {
 
-	public void doStep(){
+	public void doStep() throws ActionFinishedException{
+		super.doStep();
 		this.isReady = false;
 		Action nextAction = this.actions.get(0);
 		nextAction.doStep();

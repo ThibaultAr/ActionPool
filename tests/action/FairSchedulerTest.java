@@ -29,31 +29,31 @@ public class FairSchedulerTest extends SchedulerTest{
 		assertTrue(action2.isReady());
 		assertTrue(scheduler.isReady());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isInProgress());
 		assertFalse(action2.isInProgress());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action2.isInProgress());
 		assertTrue(action1.isInProgress());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isInProgress());
 		assertTrue(action2.isInProgress());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isInProgress());
 		assertTrue(action2.isFinished());
 		assertTrue(scheduler.isInProgress());
 		
-		scheduler.doStep();
+		tryAction(scheduler);
 		
 		assertTrue(action1.isFinished());
 		assertTrue(action2.isFinished());
