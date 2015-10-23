@@ -30,5 +30,13 @@ public abstract class ResourcePool<T extends Resource> {
 		this.availableResources.add(resource);
 	}
 	
+	public boolean containsAsAvailableResources(T resource){
+		return availableResources.contains(resource);
+	}
+	
+	public boolean containsAsGivenResources(T resource){
+		return givenResources.contains(resource);
+	}
+	
 	public abstract T createResource();
 }

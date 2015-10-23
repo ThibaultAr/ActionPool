@@ -12,10 +12,10 @@ public class FairScheduler extends Scheduler{
 		super.doStep();
 		this.isReady = false;
 		int nbActions = this.actions.size();
-		Action nextAction = this.actions.get(this.index%nbActions);
+		Action nextAction = this.actions.get(this.index%nbActions); /* si bug voir alex */
 		nextAction.doStep();
 		if(nextAction.isFinished())
 			this.actions.remove(nextAction);
-		this.index++;
+		this.index++; /* si bug voir alex */
 	}
 }
