@@ -27,7 +27,7 @@ public class BasketPoolTest {
 	}
 	
 	@Test(expected = NoSuchElementException.class)
-	public void testProvideResourceNotAvailable() {
+	public void testProvideResourceNotAvailablegit () {
 		BasketPool basketPool = new BasketPool(0);
 		basketPool.containsAsAvailableResources(new Basket());
 		

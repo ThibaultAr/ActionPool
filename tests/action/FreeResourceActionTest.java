@@ -1,58 +1,47 @@
 package action;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
 import pool.BasketPool;
+import pool.ResourcePool;
 import pool.resource.Basket;
 import pool.user.ResourcefulUser;
+import exception.ActionFinishedException;
 
-public class FreeResourceActionTest {
+public class FreeResourceActionTest extends ResourceActionTest{
+	public static Basket b = new Basket();
+	public class MockUser extends ResourcefulUser<Basket>{
 
-	@Test
-	public void testResourceAction() {
-		ResourcefulUser<Basket> user = new ResourcefulUser<Basket>();
-		BasketPool pool = new BasketPool(1);
-		FreeResourceAction<Basket> action = new FreeResourceAction<Basket>(user, pool);
-		
-		assertTrue(pool.containsAsAvailableResources(user.getResource()));
-		assertFalse(pool.containsAsGivenResources(user.getResource()));
-		
-		action.resourceAction();
-		
-		assertFalse(pool.containsAsAvailableResources(user.getResource()));
-		assertTrue(pool.containsAsGivenResources(user.getResource()));
-		assertTrue(action.isFinished());
+		public Basket getResource(){
+			return b ;
+		}
 	}
 	
-	@Test
-	public void testFreeResourceAction() {
-		fail("Not yet implemented");
+	public class MockPool extends BasketPool{
+		public MockPool(){
+			super(1);
+			this.givenResources.add(b);
+		}
+	}
+	
+	@Override
+	public ResourceAction<Basket> createBasketAction(
+			ResourcefulUser<Basket> user, ResourcePool<Basket> pool) {
+		return new FreeResourceAction<Basket>(new MockUser(),new MockPool());
 	}
 
-	@Test
-	public void testDoStep() {
-		fail("Not yet implemented");
-	}
 
 	@Test
-	public void testIsReady() {
-		fail("Not yet implemented");
+	public void resourceActionTest() throws ActionFinishedException {
+		ResourcefulUser<Basket> user = new MockUser();
+		ResourcePool<Basket> pool = new MockPool();
+		
+		
+		ResourceAction<Basket> action = createBasketAction(user, pool);
+		
+		
+		assertNotNull(user.getResource());
+		
+		action.doStep();	
 	}
-
-	@Test
-	public void testIsFinished() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testIsInProgress() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testResourceAction1() {
-		fail("Not yet implemented");
-	}
-
 }
