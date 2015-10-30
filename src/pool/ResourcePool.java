@@ -39,4 +39,5 @@ public abstract class ResourcePool<T extends Resource> {
 	}
 	
 	public abstract T createResource();
+
 }

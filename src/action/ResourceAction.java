@@ -37,4 +37,8 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 	public boolean isInProgress() {
 		return !this.isReady() && !this.isFinished();
 	}
+	
+	public ResourcefulUser<R> user() {
+		return user;
+	}
 }

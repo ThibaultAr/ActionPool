@@ -6,24 +6,14 @@ import org.junit.Test;
 
 import exception.ActionFinishedException;
 
-import pool.BasketPool;
+import pool.MockPool;
 import pool.ResourcePool;
 import pool.resource.*;
 
 import pool.user.ResourcefulUser;
 
 public class TakeResourceActionTest extends ResourceActionTest{
-	public class MockPool extends BasketPool{
-		protected Basket b = new Basket();
-		public MockPool(){
-			super(1);
-		}
-		
-		public Basket provideResource(){
-			return b;
-		}
-	}
-	
+
 	@Override
 	public ResourceAction<Basket> createBasketAction(
 			ResourcefulUser<Basket> user, ResourcePool<Basket> pool) {
@@ -42,6 +32,14 @@ public class TakeResourceActionTest extends ResourceActionTest{
 		
 		action.doStep();
 		
-		assertSame(user.getResource(), pool.provideResource());	
+		assertSame(user.getResource(), MockPool.b);	
+	}
+
+
+	@Override
+	public Action createAction() {
+		
+		
+		return createBasketAction(new ResourcefulUser<Basket>(), new MockPool());
 	}
 }
