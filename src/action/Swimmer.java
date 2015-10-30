@@ -9,7 +9,7 @@ import pool.user.ResourcefulUser;
 public class Swimmer extends SequentialScheduler {
 	protected String name;
 	
-	public Swimmer(String name, BasketPool baskets, CubiclePool cubicles, int timeUndressed, int timeSwim, int timeDressed){
+	public Swimmer(String name, BasketPool baskets, CubiclePool cubicles, int timeToUndress, int timeSwimming, int timeToDress){
 		this.name = name;
 		ResourcefulUser<Basket> basketManager = new ResourcefulUser<Basket>();
 		TakeResourceAction<Basket> takeBasket = new TakeResourceAction<Basket>(basketManager,baskets);
@@ -19,9 +19,9 @@ public class Swimmer extends SequentialScheduler {
 		TakeResourceAction<Cubicle> takeCubicle = new TakeResourceAction<Cubicle>(cubicleManager,cubicles);
 		FreeResourceAction<Cubicle> freeCubicle = new FreeResourceAction<Cubicle>(cubicleManager,cubicles);
 		
-		Action getUndressed = new ForeseeableAction(timeUndressed);
-		Action swimming = new ForeseeableAction(timeSwim);
-		Action getDressed = new ForeseeableAction(timeDressed);
+		Action getUndressed = new ForeseeableAction(timeToUndress);
+		Action swimming = new ForeseeableAction(timeSwimming);
+		Action getDressed = new ForeseeableAction(timeToDress);
 		
 		this.actions.add(takeBasket);
 		this.actions.add(takeCubicle);
