@@ -28,8 +28,8 @@ public class Swimmer extends SequentialScheduler {
 		this.actions.add(getUndressed);
 		this.actions.add(freeCubicle);
 		this.actions.add(swimming);
-		this.actions.add(getDressed);
 		this.actions.add(takeCubicle);
+		this.actions.add(getDressed);
 		this.actions.add(freeCubicle);
 		this.actions.add(freeBasket);
 	}

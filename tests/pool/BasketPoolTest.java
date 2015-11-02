@@ -8,11 +8,12 @@ import org.junit.Test;
 
 import pool.resource.Basket;
 
-public class BasketPoolTest {
+public class BasketPoolTest extends ResourcePoolTest<Basket>{
 
 	@Test
 	public void testBasketPool() {
-		fail("Not yet implemented");
+		BasketPool basketPool = new BasketPool(0);
+		assertNotNull(basketPool);
 	}
 
 	@Test
