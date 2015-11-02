@@ -9,7 +9,7 @@ import pool.resource.Cubicle;
 public class CubiclePoolTest extends ResourcePoolTest<Cubicle> {
 
 	@Test
-	public void createResourceTest() {
+	public void testCreateResource() {
 		CubiclePool cubiclePool = new CubiclePool(0);
 		Cubicle cubicle = new Cubicle();
 		assertTrue(cubicle.equals(cubiclePool.createResource()));

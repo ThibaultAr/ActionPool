@@ -9,7 +9,7 @@ import pool.resource.Basket;
 public class ResourcefulUserTest {
 
 	@Test
-	public void resetResourceTest() {
+	public void testResetResource() {
 		ResourcefulUser<Basket> resourcefulUser = new ResourcefulUser<Basket>();
 		assertNull(resourcefulUser.getResource());
 

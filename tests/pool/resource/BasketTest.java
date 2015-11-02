@@ -7,7 +7,7 @@ import org.junit.Test;
 public class BasketTest implements ResourceTest {
 
 	@Test
-	public void getDescriptionTest() {
+	public void testGetDescription() {
 		Basket basket = new Basket();
 		assertEquals(basket.getDescription(), "Basket");
 	}

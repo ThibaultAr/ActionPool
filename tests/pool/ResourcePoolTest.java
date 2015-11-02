@@ -23,7 +23,7 @@ public abstract class ResourcePoolTest<T extends Resource> {
 	}
 
 	@Test
-	public void provideResourceTest() {
+	public void testProvideResource() {
 		assertEquals(resourcePool1.provideResource(),
 				resourcePool2.availableResources.remove(0));
 		assertTrue(resourcePool1.givenResources
@@ -31,12 +31,12 @@ public abstract class ResourcePoolTest<T extends Resource> {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void freeResourceTestException() {
+	public void testFreeResourceWithIllegalArgument() {
 		resourcePool.freeResource(resourcePool.createResource());
 	}
 
 	@Test
-	public void freeResourceTest() {
+	public void testFreeResource() {
 		resourcePool1.provideResource();
 		
 		T resource = resourcePool1.givenResources.get(0);
@@ -49,6 +49,6 @@ public abstract class ResourcePoolTest<T extends Resource> {
 		assertTrue(resourcePool1.availableResources.contains(resource));
 	}
 
-	public abstract void createResourceTest();
+	public abstract void testCreateResource();
 
 }
