@@ -15,4 +15,9 @@ public class BasketPoolTest extends ResourcePoolTest<Basket> {
 
 	}
 
+	@Override
+	public ResourcePool<Basket> createResourcePool(int nb) {
+		return new BasketPool(nb);
+	}
+
 }
