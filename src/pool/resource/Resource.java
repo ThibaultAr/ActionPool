@@ -2,5 +2,5 @@ package pool.resource;
 
 public interface Resource {
 	public String getDescription();
-	public boolean equals(Object object);
+	public boolean equals(Object object);??
 }
