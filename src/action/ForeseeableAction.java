@@ -33,15 +33,19 @@ public class ForeseeableAction extends Action {
 	}
 	
 	/**
-	 * Tells if the action is in finished or not
+	 * Tells if the action is finished or not
 	 * @return true if remainingTime is <= 0, false if not
 	 */
 	public boolean isFinished(){
 		return remainingTime <= 0;
 	}
+
 	
 	/**
-	 * Decrement the action remaining time
+	 * Made the action pass to it next step : 
+	 * 	decrement the action remaining time
+	 * Throws an exception if the action is already finished
+	 
 	 */
 	public void doStep() throws ActionFinishedException{
 		super.doStep();
