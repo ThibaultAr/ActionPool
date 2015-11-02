@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import exception.ActionFinishedException;
 
-import pool.MockPool;
+import pool.MockBasketPool;
 import pool.ResourcePool;
 import pool.resource.*;
 
@@ -20,35 +20,26 @@ public class TakeResourceActionTest extends ResourceActionTest {
 		return new TakeResourceAction<Basket>(user, pool);
 	}
 
-	@Test(expected = ActionFinishedException.class)
-	public void testResourceActionOnFinishedAction()
-			throws ActionFinishedException {
-		ResourcefulUser<Basket> user = new ResourcefulUser<Basket>();
-		ResourcePool<Basket> pool = new MockPool();
-
-		ResourceAction<Basket> action = createBasketAction(user, pool);
-
-		action.doStep();
-		action.doStep();
-	}
-
 	@Test
 	public void testResourceAction() throws ActionFinishedException {
 		ResourcefulUser<Basket> user = new ResourcefulUser<Basket>();
-		ResourcePool<Basket> pool = new MockPool();
 
+		ResourcePool<Basket> pool = new MockBasketPool();
+		
 		ResourceAction<Basket> action = createBasketAction(user, pool);
 
 		assertNull(user.getResource());
 
 		action.doStep();
 
-		assertSame(user.getResource(), MockPool.b);
+		assertSame(user.getResource(), MockBasketPool.b);	
 	}
 
 	@Override
 	public Action createAction() {
 
-		return createBasketAction(new ResourcefulUser<Basket>(), new MockPool());
+		
+		
+		return createBasketAction(new ResourcefulUser<Basket>(), new MockBasketPool());
 	}
 }
