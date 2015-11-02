@@ -10,12 +10,12 @@ public class ResourcefulUserTest {
 
 	@Test
 	public void resetResourceTest() {
-		ResourcefulUser<Basket> resourcefulUser= new ResourcefulUser<Basket>();
+		ResourcefulUser<Basket> resourcefulUser = new ResourcefulUser<Basket>();
 		assertNull(resourcefulUser.getResource());
-		
+
 		resourcefulUser.setResource(new Basket());
 		assertNotNull(resourcefulUser.getResource());
-		
+
 		resourcefulUser.resetResource();
 		assertNull(resourcefulUser.getResource());
 	}

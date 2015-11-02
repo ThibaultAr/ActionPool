@@ -7,6 +7,7 @@ public abstract class Action {
 
 	/**
 	 * Made the action pass to it next step
+	 * Throws an exception if the action is already finished
 	 */
 	public void doStep() throws ActionFinishedException {
 		if(this.isFinished())
@@ -20,7 +21,7 @@ public abstract class Action {
 	public abstract boolean isReady();
 	
 	/**
-	 * Tells if the action is in finished or not
+	 * Tells if the action is finished or not
 	 * @return true if the action is finished, false if not
 	 */
 	public abstract boolean isFinished();

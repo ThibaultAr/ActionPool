@@ -5,6 +5,12 @@ import pool.ResourcePool;
 import pool.resource.Resource;
 import pool.user.ResourcefulUser;
 
+/**
+ * ResourceAction is an action with a specific behavior on an user's resource
+ * pool
+ * 
+ * @param <R>
+ */
 public abstract class ResourceAction<R extends Resource> extends Action {
 	protected ResourcefulUser<R> user;
 	protected ResourcePool<R> pool;
@@ -20,6 +26,10 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 		this.isFinished = false;
 	}
 
+	/**
+	 * Made the action pass to it next step
+	 * Throws an exception if the action is already finished
+	 */
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		this.isReady = false;
@@ -37,7 +47,7 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 	public boolean isInProgress() {
 		return !this.isReady() && !this.isFinished();
 	}
-	
+
 	public ResourcefulUser<R> user() {
 		return user;
 	}
