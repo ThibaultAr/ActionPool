@@ -10,8 +10,9 @@ import pool.user.ResourcefulUser;
 
 public abstract class ResourceActionTest extends ActionTest {
 
-	public abstract ResourceAction<Basket> createBasketAction(ResourcefulUser<Basket> user, ResourcePool<Basket> pool);
-	
+	public abstract ResourceAction<Basket> createBasketAction(
+			ResourcefulUser<Basket> user, ResourcePool<Basket> pool);
+
 	@Test
 	public void testReadyProgress() {
 		Action action = this.createAction();

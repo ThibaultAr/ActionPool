@@ -9,7 +9,7 @@ import pool.resource.Basket;
 public class BasketPoolTest extends ResourcePoolTest<Basket> {
 
 	@Test
-	public void createResourceTest() {
+	public void testCreateResource() {
 		BasketPool basketPool = new BasketPool(0);
 		Basket basket = new Basket();
 		assertTrue(basket.equals(basketPool.createResource()));
@@ -20,5 +20,4 @@ public class BasketPoolTest extends ResourcePoolTest<Basket> {
 	public ResourcePool<Basket> createResourcePool(int nb) {
 		return new BasketPool(nb);
 	}
-
 }
