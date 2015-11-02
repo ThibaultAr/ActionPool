@@ -24,7 +24,7 @@ public abstract class ResourcePoolTest<T extends Resource> {
 
 	@Test
 	public void provideResourceTest() {
-		assertSame(resourcePool1.provideResource(),
+		assertEquals(resourcePool1.provideResource(),
 				resourcePool2.availableResources.remove(0));
 		assertTrue(resourcePool1.givenResources
 				.contains(resourcePool3.availableResources.remove(0)));
@@ -37,6 +37,8 @@ public abstract class ResourcePoolTest<T extends Resource> {
 
 	@Test
 	public void freeResourceTest() {
+		resourcePool1.provideResource();
+		
 		T resource = resourcePool1.givenResources.get(0);
 		assertTrue(resourcePool1.givenResources.contains(resource));
 		assertFalse(resourcePool1.availableResources.contains(resource));

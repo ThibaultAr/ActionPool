@@ -11,7 +11,8 @@ public class BasketPoolTest extends ResourcePoolTest<Basket> {
 	@Test
 	public void createResourceTest() {
 		BasketPool basketPool = new BasketPool(0);
-		assertSame(basketPool.createResource(), new Basket());
+		Basket basket = new Basket();
+		assertTrue(basket.equals(basketPool.createResource()));
 
 	}
 

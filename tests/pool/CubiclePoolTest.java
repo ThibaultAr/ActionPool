@@ -11,7 +11,8 @@ public class CubiclePoolTest extends ResourcePoolTest<Cubicle> {
 	@Test
 	public void createResourceTest() {
 		CubiclePool cubiclePool = new CubiclePool(0);
-		assertSame(cubiclePool.createResource(), new Cubicle());
+		Cubicle cubicle = new Cubicle();
+		assertTrue(cubicle.equals(cubiclePool.createResource()));
 	}
 
 	@Override
