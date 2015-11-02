@@ -48,7 +48,6 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 		return !this.isReady() && !this.isFinished();
 	}
 
-	?//pourquoi pas getUser ?
 	public ResourcefulUser<R> user() {
 		return user;
 	}
