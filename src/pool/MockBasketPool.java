@@ -2,11 +2,11 @@ package pool;
 
 import pool.resource.Basket;
 
-public class MockPool extends BasketPool{
+public class MockBasketPool extends BasketPool{
 	public static final Basket b = new Basket();
-	public MockPool(){
+	public MockBasketPool(){
 		super(1);
-		this.givenResources.add(MockPool.b);
+		this.givenResources.add(MockBasketPool.b);
 	}
 	
 	public Basket provideResource(){

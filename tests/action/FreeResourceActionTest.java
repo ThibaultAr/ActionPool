@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import pool.MockPool;
+import pool.MockBasketPool;
 import pool.ResourcePool;
 import pool.resource.Basket;
 import pool.user.ResourcefulUser;
@@ -22,11 +22,11 @@ public class FreeResourceActionTest extends ResourceActionTest{
 	@Test
 	public void resourceActionTest() throws ActionFinishedException {
 		ResourcefulUser<Basket> user = new ResourcefulUser<Basket>();
-		ResourcePool<Basket> pool = new MockPool();
+		ResourcePool<Basket> pool = new MockBasketPool();
 		
 		ResourceAction<Basket> action = createBasketAction(user, pool);
 		
-		user.setResource(MockPool.b);
+		user.setResource(MockBasketPool.b);
 		assertNotNull(user.getResource());
 		
 		action.doStep();	
@@ -35,8 +35,8 @@ public class FreeResourceActionTest extends ResourceActionTest{
 
 	@Override
 	public Action createAction() {
-		ResourceAction<Basket> action = createBasketAction(new ResourcefulUser<Basket>(), new MockPool());
-		action.user.setResource(MockPool.b);
+		ResourceAction<Basket> action = createBasketAction(new ResourcefulUser<Basket>(), new MockBasketPool());
+		action.user.setResource(MockBasketPool.b);
 		return action;
 	}
 }

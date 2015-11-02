@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import exception.ActionFinishedException;
 
-import pool.MockPool;
+import pool.MockBasketPool;
 import pool.ResourcePool;
 import pool.resource.*;
 
@@ -24,7 +24,7 @@ public class TakeResourceActionTest extends ResourceActionTest{
 	@Test
 	public void resourceActionTest() throws ActionFinishedException {
 		ResourcefulUser<Basket> user = new ResourcefulUser<Basket>();
-		ResourcePool<Basket> pool = new MockPool();
+		ResourcePool<Basket> pool = new MockBasketPool();
 		
 		ResourceAction<Basket> action = createBasketAction(user, pool);
 		
@@ -32,7 +32,7 @@ public class TakeResourceActionTest extends ResourceActionTest{
 		
 		action.doStep();
 		
-		assertSame(user.getResource(), MockPool.b);	
+		assertSame(user.getResource(), MockBasketPool.b);	
 	}
 
 
@@ -40,6 +40,6 @@ public class TakeResourceActionTest extends ResourceActionTest{
 	public Action createAction() {
 		
 		
-		return createBasketAction(new ResourcefulUser<Basket>(), new MockPool());
+		return createBasketAction(new ResourcefulUser<Basket>(), new MockBasketPool());
 	}
 }
