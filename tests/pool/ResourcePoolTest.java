@@ -51,20 +51,6 @@ public abstract class ResourcePoolTest<T extends Resource> {
 		assertTrue(resourcePool1.availableResources.contains(basket1));
 	}
 
-	@Test
-	public void containsAsAvailableResourcesTest() {
-		assertTrue(resourcePool1.containsAsAvailableResources(basket));
-		resourcePool.provideResource();
-		assertFalse(resourcePool1.containsAsAvailableResources(basket));
-	}
-
-	@Test
-	public void containsAsGivenResourcesTest() {
-		assertFalse(resourcePool1.containsAsGivenResources(basket));
-		resourcePool.freeResource(basket);
-		assertTrue(resourcePool1.containsAsGivenResources(basket));
-	}
-
 	public abstract void createResourceTest();
 
 }
