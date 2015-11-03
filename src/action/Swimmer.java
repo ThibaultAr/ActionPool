@@ -44,13 +44,6 @@ public class Swimmer extends SequentialScheduler {
 		this.isInitialized = true;
 	}
 
-	/**
-	 * used by Display
-	 */
-	public String message() {
-		return name + "'s turn \n " + name + " is ";
-	}
-
 	public void doStep() throws ActionFinishedException {
 		Displayer.getDisplayer().display(name + "'s turn \n " + name + " is ");
 		super.doStep();

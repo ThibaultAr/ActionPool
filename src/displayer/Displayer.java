@@ -4,7 +4,7 @@ public class Displayer {
 
 	static protected Displayer displayer = null;
 
-	public Displayer() {
+	private Displayer() {
 
 	}
 
