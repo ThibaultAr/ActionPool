@@ -2,6 +2,9 @@ package action;
 
 import exception.ActionFinishedException;
 
+/**
+ * Mock of Action during only one step
+ */
 public class OneStepAction extends Action {
 
 	protected boolean isReady = false;
@@ -12,7 +15,7 @@ public class OneStepAction extends Action {
 		this.isFinished = false;
 	}
 
-	public void doStep() throws ActionFinishedException{
+	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		this.isReady = false;
 		this.isFinished = true;

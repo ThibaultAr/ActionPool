@@ -7,4 +7,4 @@ Loïc Fabre
 <br/>
 TODO<br/>
 
-Interface<br/>
+Comments to verify and UML<br/>

@@ -11,4 +11,8 @@ public class CubiclePool extends ResourcePool<Cubicle> {
 	public Cubicle createResource() {
 		return new Cubicle();
 	}
+
+	public String getName() {
+		return "pool cubicle";
+	}
 }

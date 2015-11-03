@@ -27,8 +27,8 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 	}
 
 	/**
-	 * Made the action pass to it next step
-	 * Throws an exception if the action is already finished
+	 * Made the action pass to it next step Throws an exception if the action is
+	 * already finished
 	 */
 	public void doStep() throws ActionFinishedException {
 		super.doStep();

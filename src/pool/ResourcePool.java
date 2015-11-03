@@ -6,6 +6,9 @@ import java.util.NoSuchElementException;
 
 import pool.resource.Resource;
 
+/**
+ * A pool of resources differences available and given Resources
+ */
 public abstract class ResourcePool<T extends Resource> {
 	protected List<T> availableResources = new LinkedList<T>();
 	protected List<T> givenResources = new LinkedList<T>();
@@ -31,5 +34,10 @@ public abstract class ResourcePool<T extends Resource> {
 	}
 
 	public abstract T createResource();
+
+	/**
+	 * used by Display
+	 */
+	public abstract String getName();
 
 }

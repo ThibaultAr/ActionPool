@@ -11,4 +11,8 @@ public class BasketPool extends ResourcePool<Basket> {
 	public Basket createResource() {
 		return new Basket();
 	}
+
+	public String getName() {
+		return "pool basket";
+	}
 }
