@@ -14,7 +14,7 @@ public abstract class ResourceActionTest extends ActionTest {
 			ResourcefulUser<Basket> user, ResourcePool<Basket> pool);
 
 	@Test
-	public void testReadyProgress() {
+	public void testStates() {
 		Action action = this.createAction();
 		assertTrue(action.isReady());
 		tryAction(action);

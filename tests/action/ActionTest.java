@@ -28,7 +28,7 @@ public abstract class ActionTest {
 	}
 
 	@Test
-	public void testReadyProgress() {
+	public void testStates() {
 		Action action = this.createAction();
 		assertTrue(action.isReady());
 		tryAction(action);
