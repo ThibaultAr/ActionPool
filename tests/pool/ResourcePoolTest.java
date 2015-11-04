@@ -10,10 +10,10 @@ import pool.resource.Resource;
 
 public abstract class ResourcePoolTest<T extends Resource> {
 
-	ResourcePool<T> resourcePool = createResourcePool(0);
-	ResourcePool<T> resourcePool1 = createResourcePool(1);
-	ResourcePool<T> resourcePool2 = createResourcePool(1);
-	ResourcePool<T> resourcePool3 = createResourcePool(1);
+	public ResourcePool<T> resourcePool = createResourcePool(0);
+	public ResourcePool<T> resourcePool1 = createResourcePool(1);
+	public ResourcePool<T> resourcePool2 = createResourcePool(1);
+	public ResourcePool<T> resourcePool3 = createResourcePool(1);
 
 	public abstract ResourcePool<T> createResourcePool(int nb);
 
