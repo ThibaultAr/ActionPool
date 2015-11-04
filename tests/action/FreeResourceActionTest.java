@@ -26,7 +26,7 @@ public class FreeResourceActionTest extends ResourceActionTest {
 		
 		ResourceAction<Basket> action = createBasketAction(user, pool);
 		
-		user.setResource(MockBasketPool.b);
+		user.setResource(MockBasketPool.basket);
 
 		assertNotNull(user.getResource());
 
@@ -37,7 +37,7 @@ public class FreeResourceActionTest extends ResourceActionTest {
 	public Action createAction() {
 
 		ResourceAction<Basket> action = createBasketAction(new ResourcefulUser<Basket>(), new MockBasketPool());
-		action.user.setResource(MockBasketPool.b);
+		action.user.setResource(MockBasketPool.basket);
 
 		return action;
 	}

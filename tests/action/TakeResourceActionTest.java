@@ -32,7 +32,7 @@ public class TakeResourceActionTest extends ResourceActionTest {
 
 		action.doStep();
 
-		assertSame(user.getResource(), MockBasketPool.b);	
+		assertSame(user.getResource(), MockBasketPool.basket);	
 	}
 
 	@Override
