@@ -2,6 +2,11 @@ package pool;
 
 import pool.resource.Basket;
 
+/**
+ * A mock class of BasketPool used for Tests.
+ * @author thibault
+ *
+ */
 public class MockBasketPool extends BasketPool {
 	public static final Basket basket = new Basket();
 

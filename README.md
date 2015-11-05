@@ -1,10 +1,7 @@
 # ActionPiscine
-Authors:
-Léo-Paul Géneau
-Thibaul Arloing
-Abigaïl Lambin
-Loïc Fabre
-<br/>
-TODO<br/>
+Authors:<br/>
+Léo-Paul Géneau<br/>
+Thibaul Arloing<br/>
+Abigaïl Lambin<br/>
+Loïc Fabre<br/>
 
-Comments to verify and UML<br/>
