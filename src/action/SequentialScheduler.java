@@ -7,6 +7,10 @@ import exception.ActionFinishedException;
  */
 public class SequentialScheduler extends Scheduler {
 
+	/**
+	 * Does a step of the first action, the next call of doStep will do a step of the first action in the list
+	 * while it's not finished
+	 */
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		this.isReady = false;

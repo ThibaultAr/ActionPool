@@ -17,6 +17,9 @@ public class TakeResourceAction<R extends Resource> extends ResourceAction<R> {
 		super(user, pool);
 	}
 
+	/**
+	 * Here the action is to bring a resource R to the user
+	 */
 	public void resourceAction() {
 		try {
 			Displayer.getDisplayer().display(

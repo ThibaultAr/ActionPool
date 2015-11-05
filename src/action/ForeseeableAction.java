@@ -34,7 +34,10 @@ public class ForeseeableAction extends Action {
 	public boolean isFinished() {
 		return remainingTime <= 0;
 	}
-
+	
+	/**
+	 * Represents the passage of a time unit by advancing a step of the Action
+	 */
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		remainingTime--;

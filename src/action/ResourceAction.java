@@ -9,7 +9,7 @@ import pool.user.ResourcefulUser;
  * ResourceAction is an action with a specific behavior on an user's resource
  * pool
  * 
- * @param <R>
+ * @param <R> a Resource
  */
 public abstract class ResourceAction<R extends Resource> extends Action {
 	protected ResourcefulUser<R> user;
@@ -26,10 +26,6 @@ public abstract class ResourceAction<R extends Resource> extends Action {
 		this.isFinished = false;
 	}
 
-	/**
-	 * Made the action pass to it next step Throws an exception if the action is
-	 * already finished
-	 */
 	public void doStep() throws ActionFinishedException {
 		super.doStep();
 		this.isReady = false;

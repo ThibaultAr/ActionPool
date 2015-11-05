@@ -14,6 +14,9 @@ public class FreeResourceAction<R extends Resource> extends ResourceAction<R> {
 		super(user, pool);
 	}
 
+	/**
+	 * Here the action is to free a resource R from the user and replace it in the pool
+	 */
 	public void resourceAction() {
 		try {
 			Displayer.getDisplayer().display(
