@@ -2,6 +2,11 @@ package pool.user;
 
 import pool.resource.Resource;
 
+/**
+ * A ResourcefulUser contains a resource.
+ *
+ * @param <R> a resource
+ */
 public class ResourcefulUser<R extends Resource> {
 
 	protected R resource;
