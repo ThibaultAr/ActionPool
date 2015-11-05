@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 import pool.resource.Resource;
 
 /**
- * A pool of resources. There is two kind of resources, available and given.
+ * A pool of resources. There is two kind of resources, available and given ones.
  */
 public abstract class ResourcePool<T extends Resource> {
 	protected List<T> availableResources = new LinkedList<T>();
